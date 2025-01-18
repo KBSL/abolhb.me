@@ -18,7 +18,6 @@
             font-family: Arial, sans-serif;
             color: #000;
         }
-
         .desktop {
             position: absolute;
             top: 0;
@@ -28,13 +27,11 @@
             background-color: #008080;
             padding: 10px;
         }
-
         .icons {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
         }
-
         .icon {
             display: flex;
             flex-direction: column;
@@ -42,21 +39,17 @@
             margin: 10px;
             cursor: pointer;
         }
-
         .icon img {
             width: 32px;
             height: 32px;
         }
-
         .icon span {
             margin-top: 5px;
             color: #fff;
         }
-
         .icon.music-icon {
             margin-left: 25px; 
         }
-
         .window {
             position: absolute;
             top: 50px;
@@ -66,7 +59,6 @@
             border: 2px solid #000;
             display: none;
         }
-
         .title-bar {
             background-color: #000080;
             color: #fff;
@@ -76,17 +68,14 @@
             align-items: center;
             cursor: move;
         }
-
         .close-btn {
             background-color: #c0c0c0;
             border: 1px solid #000;
             cursor: pointer;
         }
-
         .content {
             padding: 10px;
         }
-
         .taskbar {
             position: fixed;
             bottom: 0;
@@ -98,19 +87,16 @@
             align-items: center;
             padding: 0 10px;
         }
-
         .start-btn {
             display: flex;
             align-items: center;
             cursor: pointer;
             height: 100%;
         }
-
         .start-btn img {
             height: 100%;
             width: auto;
         }
-
         .start-menu {
             position: absolute;
             bottom: 30px;
@@ -120,17 +106,14 @@
             display: none;
             padding: 10px;
         }
-
         .start-menu ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
         }
-
         .start-menu ul li {
             margin: 5px 0;
         }
-
         #BSOD {
             z-index: 9998;
             position: absolute;
@@ -144,7 +127,6 @@
             background-size: 100vw 100vh;
             display: none;
         }
-
         .bootscreen {
             z-index: 9998;
             position: absolute;
@@ -159,7 +141,6 @@
             -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
         }
-
         @keyframes cssAnimation {
             to {
                 width: 0;
@@ -167,7 +148,6 @@
                 overflow: hidden;
             }
         }
-
         .start-menu ul li a {
             text-decoration: none;
             color: #000;
@@ -179,7 +159,6 @@
         <div class="dos"></div>
         <div class="splash" style="background-image: url('https://i.ytimg.com/vi/QE18Lr_XVMY/hqdefault.jpg')"></div>
     </article>
-
     <div class="desktop">
         <div class="icons">
             <div class="icon" onclick="openWindow('my-computer')">
@@ -200,7 +179,6 @@
             </div>
         </div>
     </div>
-
     <div id="my-computer" class="window">
         <div class="title-bar">
             <span>My Computer</span>
@@ -210,7 +188,6 @@
             <p>My name is abolhb my hobbies include collecting stones, gathering victims, and destroying devices i was born in moscow</p>
         </div>
     </div>
-
     <div id="recycle-bin" class="window">
         <div class="title-bar">
             <span>Recycle Bin</span>
@@ -220,11 +197,8 @@
             <p>This is the recycle bin in which we place victims</p>
         </div>
     </div>
-
     <div id="BSOD"></div>
-
     <audio id="music" src="https://ia800605.us.archive.org/5/items/yal-3-yn-8-same/YAL3YN-8SAME.mp3"></audio>
-
     <div class="taskbar">
         <div class="start-btn" onclick="toggleStartMenu()">
             <img src="https://i.redd.it/s120xizbj4r81.jpg" alt="Start">
@@ -238,28 +212,23 @@
             </ul>
         </div>
     </div>
-
     <script>
         function openWindow(windowId) {
             document.getElementById(windowId).style.display = 'block';
             makeWindowDraggable(windowId);
         }
-
         function closeWindow(windowId) {
             document.getElementById(windowId).style.display = 'none';
         }
-
         function showBSOD() {
             document.getElementById('BSOD').style.display = 'block';
             setTimeout(() => {
                 location.reload(); 
             }, 500000);
         }
-
         function toggleMusic() {
             const music = document.getElementById('music');
             const musicIcon = document.getElementById('music-icon');
-
             if (music.paused) {
                 music.play(); 
                 musicIcon.src = "https://raw.githubusercontent.com/KBSL/KBSL.github.io/main/windows-95-spin-disc-icon.gif";
@@ -268,7 +237,6 @@
                 musicIcon.src = "https://raw.githubusercontent.com/KBSL/KBSL.github.io/main/cd.png"; 
             }
         }
-
         function toggleStartMenu() {
             const startMenu = document.getElementById('start-menu');
             if (startMenu.style.display === 'block') {
@@ -277,27 +245,22 @@
                 startMenu.style.display = 'block';
             }
         }
-
         function makeWindowDraggable(windowId) {
             const windowElement = document.getElementById(windowId);
             const titleBar = windowElement.querySelector('.title-bar');
-
             let isDragging = false;
             let offsetX, offsetY;
-
             titleBar.addEventListener('mousedown', (e) => {
                 isDragging = true;
                 offsetX = e.clientX - windowElement.offsetLeft;
                 offsetY = e.clientY - windowElement.offsetTop;
             });
-
             document.addEventListener('mousemove', (e) => {
                 if (isDragging) {
                     windowElement.style.left = `${e.clientX - offsetX}px`;
                     windowElement.style.top = `${e.clientY - offsetY}px`;
                 }
             });
-
             document.addEventListener('mouseup', () => {
                 isDragging = false;
             });
