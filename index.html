@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="https://github.com/KBSL/KBSL.github.io/raw/refs/heads/main/Windows95.ico">
+    <meta property="og:title" content="whoami">
+    <meta property="og:description" content="Меня зовут аболхб мои увлечения включают коллекционирование камней сбор жертв и уничтожение устройств Я родился в Москве">
+    <meta property="og:image" content="https://i.ibb.co/QXsJ98H/14946098710-c340d6accf-z.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1200">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Windows95</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #008080;
+            font-family: Arial, sans-serif;
+            color: #000;
+        }
+
+        .desktop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 30px;
+            background-color: #008080;
+            padding: 10px;
+        }
+
+        .icons {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .icon img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .icon span {
+            margin-top: 5px;
+            color: #fff;
+        }
+
+        /* تحريك أيقونة "ميوزك" إلى اليمين */
+        .icon.music-icon {
+            margin-left: 25px; /* يمكنك تعديل القيمة حسب الحاجة */
+        }
+
+        .window {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 300px;
+            background-color: #c0c0c0;
+            border: 2px solid #000;
+            display: none;
+        }
+
+        .title-bar {
+            background-color: #000080;
+            color: #fff;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: move;
+        }
+
+        .close-btn {
+            background-color: #c0c0c0;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 10px;
+        }
+
+        .taskbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background-color: #c0c0c0;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .start-btn {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            height: 100%;
+        }
+
+        .start-btn img {
+            height: 100%;
+            width: auto;
+        }
+
+        .start-menu {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            background-color: #c0c0c0;
+            border: 1px solid #000;
+            display: none;
+            padding: 10px;
+        }
+
+        .start-menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .start-menu ul li {
+            margin: 5px 0;
+        }
+
+        #BSOD {
+            z-index: 9998;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('https://regmedia.co.uk/2021/02/02/shutterstock_bsod.jpg');
+            background-size: 100vw 100vh;
+            display: none;
+        }
+
+        .bootscreen {
+            z-index: 9998;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('http://i.imgur.com/MDImJVj.gif');
+            background-size: 100vw 100vh;
+            -moz-animation: cssAnimation 0s ease-in 5s forwards;
+            -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+            -o-animation: cssAnimation 0s ease-in 5s forwards;
+            animation: cssAnimation 0s ease-in 5s forwards;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes cssAnimation {
+            to {
+                width: 0;
+                height: 0;
+                overflow: hidden;
+            }
+        }
+
+        .start-menu ul li a {
+            text-decoration: none;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <article class="bootscreen">
+        <div class="dos"></div>
+        <div class="splash" style="background-image: url('https://i.ytimg.com/vi/QE18Lr_XVMY/hqdefault.jpg')"></div>
+    </article>
+
+    <div class="desktop">
+        <div class="icons">
+            <div class="icon" onclick="openWindow('my-computer')">
+                <img src="https://custom-doodle.com/wp-content/uploads/doodle/windows-95-pc-icon/windows-95-pc-icon-doodle.gif" alt="My Computer">
+                <span>My Computer</span>
+            </div>
+            <div class="icon" onclick="openWindow('recycle-bin')">
+                <img src="https://i.ibb.co/0tC48pL/recycle-bin.png" alt="Recycle Bin">
+                <span>Recycle Bin</span>
+            </div>
+            <div class="icon" onclick="showBSOD()">
+                <img src="https://i.ibb.co/71sZrYN/Smail.png" alt="Smail.exe">
+                <span>Smail.exe</span>
+            </div>
+            <div class="icon music-icon" onclick="toggleMusic()">
+                <img id="music-icon" src="https://raw.githubusercontent.com/KBSL/KBSL.github.io/main/cd.png" alt="Music">
+                <span>Music</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="my-computer" class="window">
+        <div class="title-bar">
+            <span>My Computer</span>
+            <button class="close-btn" onclick="closeWindow('my-computer')">X</button>
+        </div>
+        <div class="content">
+            <p>My name is abolhb my hobbies include collecting stones, gathering victims, and destroying devices i was born in moscow</p>
+        </div>
+    </div>
+
+    <div id="recycle-bin" class="window">
+        <div class="title-bar">
+            <span>Recycle Bin</span>
+            <button class="close-btn" onclick="closeWindow('recycle-bin')">X</button>
+        </div>
+        <div class="content">
+            <p>This is the recycle bin in which we place victims</p>
+        </div>
+    </div>
+
+    <div id="BSOD"></div>
+
+    <audio id="music" src="https://ia800605.us.archive.org/5/items/yal-3-yn-8-same/YAL3YN-8SAME.mp3"></audio>
+
+    <div class="taskbar">
+        <div class="start-btn" onclick="toggleStartMenu()">
+            <img src="https://i.redd.it/s120xizbj4r81.jpg" alt="Start">
+        </div>
+        <div id="start-menu" class="start-menu">
+            <ul>
+                <li><a href="https://discord.gg/dvXH85CfpN" target="_blank">Discord Server</a></li>
+                <li><a href="https://www.instagram.com/g7m9/" target="_blank">My Instagram</a></li>
+                <li><a href="https://www.youtube.com/@ABOLHB" target="_blank">My YouTube Channel</a></li>
+                <li><a href="https://github.com/MasonGroup" target="_blank">GitHub Repository</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function openWindow(windowId) {
+            document.getElementById(windowId).style.display = 'block';
+            makeWindowDraggable(windowId);
+        }
+
+        function closeWindow(windowId) {
+            document.getElementById(windowId).style.display = 'none';
+        }
+
+        function showBSOD() {
+            document.getElementById('BSOD').style.display = 'block';
+            setTimeout(() => {
+                location.reload(); 
+            }, 500000);
+        }
+
+        function toggleMusic() {
+            const music = document.getElementById('music');
+            const musicIcon = document.getElementById('music-icon');
+
+            if (music.paused) {
+                music.play(); 
+                musicIcon.src = "https://raw.githubusercontent.com/KBSL/KBSL.github.io/main/windows-95-spin-disc-icon.gif";
+            } else {
+                music.pause(); 
+                musicIcon.src = "https://raw.githubusercontent.com/KBSL/KBSL.github.io/main/cd.png"; 
+            }
+        }
+
+        function toggleStartMenu() {
+            const startMenu = document.getElementById('start-menu');
+            if (startMenu.style.display === 'block') {
+                startMenu.style.display = 'none';
+            } else {
+                startMenu.style.display = 'block';
+            }
+        }
+
+        function makeWindowDraggable(windowId) {
+            const windowElement = document.getElementById(windowId);
+            const titleBar = windowElement.querySelector('.title-bar');
+
+            let isDragging = false;
+            let offsetX, offsetY;
+
+            titleBar.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                offsetX = e.clientX - windowElement.offsetLeft;
+                offsetY = e.clientY - windowElement.offsetTop;
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    windowElement.style.left = `${e.clientX - offsetX}px`;
+                    windowElement.style.top = `${e.clientY - offsetY}px`;
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+        }
+    </script>
+</body>
+</html>
