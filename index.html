@@ -39,6 +39,12 @@
             margin: 10px;
             cursor: pointer;
         }
+        .icon.music-icon {
+            margin-left: 25px; 
+        }
+        .icon.explorer {
+            margin-left: 25px; 
+        }
         .icon img {
             width: 32px;
             height: 32px;
@@ -47,14 +53,11 @@
             margin-top: 5px;
             color: #fff;
         }
-        .icon.music-icon {
-            margin-left: 25px; 
-        }
         .window {
             position: absolute;
             top: 50px;
             left: 50px;
-            width: 300px;
+            width: 600px;
             background-color: #c0c0c0;
             border: 2px solid #000;
             display: none;
@@ -88,10 +91,11 @@
             padding: 0 10px;
         }
         .start-btn {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            height: 100%;
+           display: flex;
+           align-items: center;
+           cursor: pointer;
+           height: 100%;
+           margin-right: 10px; 
         }
         .start-btn img {
             height: 100%;
@@ -99,7 +103,7 @@
         }
         .start-menu {
             position: absolute;
-            bottom: 30px;
+            bottom: 40px;
             left: 0;
             background-color: #c0c0c0;
             border: 1px solid #000;
@@ -112,7 +116,7 @@
             padding: 0;
         }
         .start-menu ul li {
-            margin: 5px 0;
+            margin: 6px 0;
         }
         #BSOD {
             z-index: 9998;
@@ -152,6 +156,84 @@
             text-decoration: none;
             color: #000;
         }
+        .explorer-window {
+            width: 900px; 
+            height: 760px;
+            background-color: #fff;
+            border: 2px solid #000;
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+        .explorer-toolbar {
+            background-color: #ece9d8;
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            gap: 5px;
+        }
+
+        .explorer-toolbar button {
+            background-color: #ece9d8;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .explorer-toolbar button:hover {
+            background-color: #d4d0c8;
+        }
+
+        .explorer-sidebar {
+            width: 200px;
+            background-color: #f0f0f0;
+            border-right: 1px solid #ccc;
+            float: left;
+            height: calc(96% - 40px);
+            overflow-y: auto;
+        }
+
+        .explorer-sidebar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .explorer-sidebar ul li {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .explorer-sidebar ul li:hover {
+            background-color: #d4d0c8;
+        }
+
+        .explorer-content {
+            margin-left: 200px;
+            padding: 10px;
+            height: calc(100% - 40px);
+            overflow-y: auto;
+        }
+
+        .explorer-content .file {
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .explorer-content .file img {
+            width: 64px;
+            height: 64px;
+        }
+
+        .explorer-content .file span {
+            display: block;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -171,11 +253,15 @@
             </div>
             <div class="icon" onclick="showBSOD()">
                 <img src="https://i.ibb.co/71sZrYN/Smail.png" alt="Smail.exe">
-                <span>Smail.exe</span>
+                <span>Virus.exe</span>
             </div>
             <div class="icon music-icon" onclick="toggleMusic()">
                 <img id="music-icon" src="https://raw.githubusercontent.com/KBSL/KBSL.github.io/main/cd.png" alt="Music">
                 <span>Music</span>
+            </div>
+            <div class="icon" onclick="openWindow('explorer')">
+                <img src="https://i.ibb.co/gP6K5L5/Folder.png" alt="Explorer">
+                <span>My Tools</span>
             </div>
         </div>
     </div>
@@ -197,6 +283,26 @@
             <p>This is the recycle bin in which we place victims</p>
         </div>
     </div>
+    <div id="explorer" class="explorer-window">
+        <div class="title-bar">
+            <span>Explorer</span>
+            <button class="close-btn" onclick="closeWindow('explorer')">X</button>
+        </div>
+        <div class="explorer-toolbar">
+            <button>Freemasoney</button>
+            <button>BombTeam</button>
+            <button>WizTeam</button>
+        </div>
+        <div class="explorer-sidebar">
+            <ul>
+                <li onclick="showTools()">Tools</li>
+                <li onclick="showViruses()">Viruses</li>
+                <li onclick="showApplications()">Applications</li>
+            </ul>
+        </div>
+        <div class="explorer-content" id="explorer-content">
+        </div>
+    </div>
     <div id="BSOD"></div>
     <audio id="music" src="https://ia800605.us.archive.org/5/items/yal-3-yn-8-same/YAL3YN-8SAME.mp3"></audio>
     <div class="taskbar">
@@ -216,19 +322,25 @@
         function openWindow(windowId) {
             document.getElementById(windowId).style.display = 'block';
             makeWindowDraggable(windowId);
+            if (windowId === 'explorer') {
+                showTools();
+            }
         }
         function closeWindow(windowId) {
             document.getElementById(windowId).style.display = 'none';
         }
         function showBSOD() {
-            document.getElementById('BSOD').style.display = 'block';
-            setTimeout(() => {
-                location.reload(); 
-            }, 500000);
-        }
+    const bsod = document.getElementById('BSOD');
+    const music = document.getElementById('music');
+    if (music && !music.paused) {
+        music.pause();
+    }
+    bsod.style.display = 'block';
+    }
         function toggleMusic() {
             const music = document.getElementById('music');
             const musicIcon = document.getElementById('music-icon');
+
             if (music.paused) {
                 music.play(); 
                 musicIcon.src = "https://raw.githubusercontent.com/KBSL/KBSL.github.io/main/windows-95-spin-disc-icon.gif";
@@ -261,10 +373,88 @@
                     windowElement.style.top = `${e.clientY - offsetY}px`;
                 }
             });
+
             document.addEventListener('mouseup', () => {
                 isDragging = false;
             });
         }
+        function showTools() {
+            const content = document.getElementById('explorer-content');
+            content.innerHTML = `
+                <div class="file" onclick="showViruses()">
+                    <img src="https://i.ibb.co/TML99dW/Folder.png" alt="Viruses">
+                    <span>Viruses</span>
+                </div>
+                <div class="file" onclick="showApplications()">
+                    <img src="https://i.ibb.co/TML99dW/Folder.png" alt="Applications">
+                    <span>Applications</span>
+                </div>
+            `;
+        }
+        function showViruses() {
+    const content = document.getElementById('explorer-content');
+    const viruses = [
+        { name: "Magellan", link: "https://github.com/MasonGroup/Magellan/archive/refs/heads/main.zip" },
+        { name: "MatrixVirus", link: "https://github.com/MasonGroup/MatrixVirus/archive/refs/heads/main.zip" },
+        { name: "Squidward", link: "https://github.com/MasonGroup/Squidward/archive/refs/heads/main.zip" },
+        { name: "AngryVirus", link: "https://github.com/MasonGroup/AngryVirus/archive/refs/heads/main.zip" },
+        { name: "Stalin", link: "https://github.com/MasonGroup/Stalin/archive/refs/heads/main.zip" },
+        { name: "Knuckles", link: "https://github.com/MasonGroup/Knuckles/archive/refs/heads/main.zip" },
+        { name: "Pendulum", link: "https://github.com/MasonGroup/Pendulum/archive/refs/heads/main.zip" },
+        { name: "Creep", link: "https://github.com/MasonGroup/Creep/archive/refs/heads/main.zip" },
+        { name: "DOMO", link: "https://github.com/MasonGroup/DOMO/archive/refs/heads/main.zip" },
+        { name: "MasonMelting", link: "https://github.com/MasonGroup/MasonMelting/archive/refs/heads/main.zip" },
+        { name: "MasonVirusV2", link: "https://github.com/MasonGroup/MasonVirusV2/archive/refs/heads/main.zip" },
+        { name: "MasonVirusV3", link: "https://github.com/MasonGroup/MasonVirusV3/archive/refs/heads/main.zip" },
+        { name: "MasonVirus", link: "https://github.com/MasonGroup/MasonVirus/archive/refs/heads/main.zip" },
+        { name: "HighHappy", link: "https://github.com/MasonGroup/HighHappy/archive/refs/heads/main.zip" },
+        { name: "MTHR7H", link: "https://github.com/MasonGroup/MTHR7H/archive/refs/heads/main.zip" },
+        { name: "PASCAL", link: "https://github.com/MasonGroup/PASCAL/archive/refs/heads/main.zip" },
+        { name: "MasonMalware", link: "https://github.com/MasonGroup/MasonMalware/archive/refs/heads/main.zip" },
+        { name: "Anti-Format", link: "https://github.com/MasonGroup/Anti-Format/archive/refs/heads/main.zip" },
+        { name: "PEEKABOO", link: "https://github.com/MasonGroup/PEEKABOO/archive/refs/heads/main.zip" },
+        { name: "Blocker-Anti-Virus", link: "https://github.com/MasonGroup/Blocker-Anti-Virus/archive/refs/heads/main.zip" },
+        { name: "Commandos.exe", link: "https://github.com/MasonGroup/Commandos.exe/archive/refs/heads/main.zip" },
+        { name: "Disable-UAC", link: "https://github.com/MasonGroup/Disable-UAC/archive/refs/heads/main.zip" },
+        { name: "MasonMBR", link: "https://github.com/MasonGroup/MasonMBR/archive/refs/heads/main.zip" },
+        { name: "MasonExln9.exe", link: "https://github.com/MasonGroup/MasonExln9.exe/archive/refs/heads/main.zip" },
+        { name: "MasonRansomware", link: "https://github.com/MasonGroup/MasonRansomware/archive/refs/heads/main.zip" },
+        { name: "XLNS", link: "https://github.com/MasonGroup/XLNS/archive/refs/heads/main.zip" },
+        { name: "BOOM", link: "https://github.com/MasonGroup/BOOM/archive/refs/heads/main.zip" },
+        { name: "Neshta.A", link: "https://github.com/MasonGroup/Neshta.A/archive/refs/heads/main.zip" }
+    ];
+    content.innerHTML = viruses.map(virus => `
+        <div class="file" onclick="window.open('${virus.link}')" style="text-align: center;">
+            <img src="https://thenavidex.github.io/browsers/abrowser.png" alt="${virus.name}" style="display: block; margin: 0 auto;">
+            <span style="display: block; margin-top: 5px;">${virus.name}</span>
+        </div>
+    `).join('');
+}
+function showApplications() {
+    const content = document.getElementById('explorer-content');
+    const applications = [
+        { name: "NeptuneRAT", link: "https://github.com/MasonGroup/NeptuneRAT/archive/refs/heads/main.zip" },
+        { name: "SVCINJ", link: "https://github.com/MasonGroup/SVCINJ/archive/refs/heads/main.zip" },
+        { name: "MasonRootkit", link: "https://github.com/MasonGroup/BuilderMasonRootkit/archive/refs/heads/main.zip" },
+        { name: "MasonGuard", link: "https://github.com/MasonGroup/MasonGuard/archive/refs/heads/main.zip" },
+        { name: "BOMBER", link: "https://github.com/MasonGroup/BOMBER/archive/refs/heads/main.zip" },
+        { name: "Mason-Obfuscator", link: "https://github.com/MasonGroup/MasonObfuscator/archive/refs/heads/main.zip" },
+        { name: "Matrix-Obfuscator", link: "https://github.com/MasonGroup/MatrixObfuscator/archive/refs/heads/main.zip" },
+        { name: "VenomDropper", link: "https://github.com/MasonGroup/VenomDropper/archive/refs/heads/main.zip" },
+        { name: "SuperBooRat", link: "https://github.com/MasonGroup/SuperBooRat/archive/refs/heads/main.zip" },
+        { name: "MasonCrypt", link: "https://github.com/MasonGroup/MasonCrypt/archive/refs/heads/main.zip" },
+        { name: "MasonGrabber", link: "https://github.com/MasonGroup/MasonGrabber/archive/refs/heads/main.zip" },
+        { name: "VenomPacker", link: "https://github.com/MasonGroup/VenomPacker/archive/refs/heads/main.zip" },
+        { name: "Discord-Control-Box", link: "https://github.com/MasonGroup/Discord-Control-Box/archive/refs/heads/main.zip" },
+        { name: "Troll-Crypter", link: "https://github.com/MasonGroup/Troll-Crypter/archive/refs/heads/main.zip" }
+    ];
+    content.innerHTML = applications.map(app => `
+        <div class="file" onclick="window.open('${app.link}')" style="text-align: center;">
+            <img src="https://thenavidex.github.io/browsers/abrowser.png" alt="${app.name}" style="display: block; margin: 0 auto;">
+            <span style="display: block; margin-top: 5px;">${app.name}</span>
+        </div>
+    `).join('');
+}
     </script>
 </body>
 </html>
