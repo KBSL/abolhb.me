@@ -1,465 +1,940 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="https://github.com/KBSL/KBSL.github.io/raw/refs/heads/main/Windows95.ico">
-    <meta property="og:title" content="MyComputer">
-    <meta property="og:image" content="https://i.ibb.co/QXsJ98H/14946098710-c340d6accf-z.jpg">
-    <meta property="og:description" content="My name is abolhb my hobbies include collecting stones, gathering victims, and destroying devices i was born in moscow">
-    <meta property="og:image:width" content="1920">
-    <meta property="og:image:height" content="1080">
-    <meta property="og:type" content="website">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="1200">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>desktop-6rf4n6b\lhwbe</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #008080;
-            font-family: Arial, sans-serif;
-            color: #000;
-        }
-        .desktop {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 30px;
-            background-color: #008080;
-            padding: 10px;
-        }
-        .icons {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .icon {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 10px;
-            cursor: pointer;
-        }
-        .icon.music-icon {
-            margin-left: 25px; 
-        }
-        .icon.explorer {
-            margin-left: 25px; 
-        }
-        .icon img {
-            width: 32px;
-            height: 32px;
-        }
-        .icon span {
-            margin-top: 5px;
-            color: #fff;
-        }
-        .window {
-            position: absolute;
-            top: 50px;
-            left: 50px;
-            width: 300px;
-            background-color: #c0c0c0;
-            border: 2px solid #000;
-            display: none;
-        }
-        .title-bar {
-            background-color: #000080;
-            color: #fff;
-            padding: 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: move;
-        }
-        .close-btn {
-            background-color: #c0c0c0;
-            border: 1px solid #000;
-            cursor: pointer;
-        }
-        .content {
-            padding: 10px;
-        }
-        .taskbar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 30px;
-            background-color: #c0c0c0;
-            display: flex;
-            align-items: center;
-            padding: 0 10px;
-        }
-        .start-btn {
-           display: flex;
-           align-items: center;
-           cursor: pointer;
-           height: 100%;
-           margin-right: 10px; 
-        }
-        .start-btn img {
-            height: 100%;
-            width: auto;
-        }
-        .start-menu {
-            position: absolute;
-            bottom: 30px;
-            left: 0;
-            background-color: #c0c0c0;
-            border: 1px solid #000;
-            display: none;
-            padding: 10px;
-        }
-        .start-menu ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        .start-menu ul li {
-            margin: 5px 0;
-        }
-        #BSOD {
-            z-index: 9998;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 100vw;
-            height: 100vh;
-            background-image: url('https://regmedia.co.uk/2021/02/02/shutterstock_bsod.jpg');
-            background-size: 100vw 100vh;
-            display: none;
-        }
-        .bootscreen {
-            z-index: 9998;
-            position: absolute;
-            width: 100vw;
-            height: 100vh;
-            background-image: url('http://i.imgur.com/MDImJVj.gif');
-            background-size: 100vw 100vh;
-            -moz-animation: cssAnimation 0s ease-in 5s forwards;
-            -webkit-animation: cssAnimation 0s ease-in 5s forwards;
-            -o-animation: cssAnimation 0s ease-in 5s forwards;
-            animation: cssAnimation 0s ease-in 5s forwards;
-            -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-        }
-        @keyframes cssAnimation {
-            to {
-                width: 0;
-                height: 0;
-                overflow: hidden;
-            }
-        }
-        .start-menu ul li a {
-            text-decoration: none;
-            color: #000;
-        }
-        .explorer-window {
-            width: 900px; 
-            height: 760px;
-            background-color: #fff;
-            border: 2px solid #000;
-            display: none;
-            position: absolute;
-            top: 50px;
-            left: 50px;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/HQXP/m/main/x.ico">
+  <meta property="og:title" content="MyComputer">
+  <meta property="og:image" content="https://raw.githubusercontent.com/HQXP/m/main/xx.png">
+  <meta property="og:description" content="Born in Moscow and living in Al-Kharj, I am a passionate malware developer and security researcher specializing in Rootkit vulnerabilities. My inspiration comes from Saddam Hussein, who has been my role model throughout my life">
+  <title>ABOLHB</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Share Tech Mono', monospace;
     }
-        .explorer-toolbar {
-            background-color: #ece9d8;
-            padding: 5px;
-            border-bottom: 1px solid #ccc;
-            display: flex;
-            gap: 5px;
-        }
 
-        .explorer-toolbar button {
-            background-color: #ece9d8;
-            border: 1px solid #ccc;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
+    body {
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
 
-        .explorer-toolbar button:hover {
-            background-color: #d4d0c8;
-        }
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-image: url("https://i.ibb.co/rG7xSH7K/1b29faa97490ee036cc963c5f7c26ac4.gif");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    ::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(54, 7, 7, 0.5)
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(155, 0, 0, 0.3);
+    border-radius: 5px;
+    border: 2px solid rgb(68, 0, 0);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(56, 5, 5, 0.5);
+}
+    .background-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1;
+    }
 
-        .explorer-sidebar {
-            width: 200px;
-            background-color: #f0f0f0;
-            border-right: 1px solid #ccc;
-            float: left;
-            height: calc(96% - 40px);
-            overflow-y: auto;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      position: relative;
+      z-index: 2;
+    }
 
-        .explorer-sidebar ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 2rem;
+    }
 
-        .explorer-sidebar ul li {
-            padding: 5px;
-            cursor: pointer;
-        }
+    .main-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+      position: relative;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+      background: linear-gradient(to right, #fff, #ff3333, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: pulse-text 3s infinite;
+    }
 
-        .explorer-sidebar ul li:hover {
-            background-color: #d4d0c8;
-        }
+    @keyframes pulse-text {
+      0% {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+      }
+      50% {
+        text-shadow: 0 0 15px rgba(255, 0, 0, 0.9), 0 0 30px rgba(255, 0, 0, 0.7);
+      }
+      100% {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+      }
+    }
 
-        .explorer-content {
-            margin-left: 200px;
-            padding: 10px;
-            height: calc(100% - 40px);
-            overflow-y: auto;
-        }
+    .subtitle {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #888;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
 
-        .explorer-content .file {
-            display: inline-block;
-            width: 100px;
-            text-align: center;
-            margin: 10px;
-            cursor: pointer;
-        }
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
 
-        .explorer-content .file img {
-            width: 64px;
-            height: 64px;
-        }
+    @media (max-width: 768px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+    }
 
-        .explorer-content .file span {
-            display: block;
-            margin-top: 5px;
-        }
-    </style>
+    .section {
+      background-color: rgba(0, 0, 0, 0.95);
+      border: 1px solid rgba(255, 0, 0, 0.2);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 0, 0, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #ff3333, transparent);
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 0, 0, 0.3);
+      border-color: rgba(255, 0, 0, 0.4);
+    }
+
+    .section h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+      padding-bottom: 0.5rem;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+    }
+
+    .section h2 i {
+      margin-right: 10px;
+      color: #ff3333;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    }
+
+    .section p {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .skill {
+      background-color: rgba(255, 0, 0, 0.05);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 120px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .skill:hover {
+      background-color: rgba(255, 0, 0, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 0, 0, 0.3);
+    }
+
+    .skill-name {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+
+    .skill-name i {
+      margin-right: 8px;
+      color: #ff3333;
+    }
+
+    .skill-level {
+      width: 60px;
+      height: 6px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-level::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: #ff3333;
+      border-radius: 3px;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    }
+
+    .skill:nth-child(1) .skill-level::after {
+      width: 90%;
+    }
+
+    .skill:nth-child(2) .skill-level::after {
+      width: 40%;
+    }
+
+    .skill:nth-child(3) .skill-level::after {
+      width: 20%;
+    }
+
+    .skill:nth-child(4) .skill-level::after {
+      width: 70%;
+    }
+
+    .skill:nth-child(5) .skill-level::after {
+      width: 50%;
+    }
+
+    .skill:nth-child(6) .skill-level::after {
+      width: 60%;
+    }
+
+    .skill:nth-child(7) .skill-level::after {
+      width: 10%;
+    }
+
+    .skill:nth-child(8) .skill-level::after {
+      width: 5%;
+    }
+
+    .projects {
+      list-style: none;
+    }
+
+    .projects li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .projects li:hover {
+      transform: translateX(5px);
+      color: #ff3333;
+    }
+
+    .projects li::before {
+      content: '\f233';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: #ff3333;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      background-color: rgba(255, 0, 0, 0.05);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s;
+      border: 1px solid rgba(255, 0, 0, 0.1);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600;
+    }
+
+    .social-link i {
+      margin-right: 8px;
+      font-size: 1.2rem;
+    }
+
+    .social-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.2), transparent);
+      transition: 0.5s;
+    }
+
+    .social-link:hover {
+      background-color: rgba(255, 0, 0, 0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 0, 0, 0.3);
+      border-color: rgba(255, 0, 0, 0.3);
+    }
+
+    .social-link:hover::before {
+      left: 100%;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 0, 0, 0.2);
+      color: #888;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    .audio-player {
+      margin-top: 2rem;
+      width: 100%;
+      background-color: rgba(255, 0, 0, 0.05);
+      padding: 1.5rem;
+      border-radius: 4px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .audio-player p {
+      margin-bottom: 1rem;
+      color: #888;
+      font-family: 'Rajdhani', sans-serif;
+      display: flex;
+      align-items: center;
+    }
+
+    .audio-player p i {
+      margin-right: 8px;
+      color: #ff3333;
+    }
+
+    .custom-audio-player {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 15px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 0, 0, 0.1);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .audio-controls {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .play-pause-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ff3333;
+      border: none;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+      transition: all 0.3s;
+    }
+
+    .play-pause-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+    }
+
+    .play-pause-btn i {
+      font-size: 1rem;
+    }
+
+    .audio-info {
+      flex-grow: 1;
+      margin: 0 15px;
+      color: #fff;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 500;
+    }
+
+    .audio-title {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+
+    .progress-container {
+      width: 100%;
+      height: 5px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: #ff3333;
+      width: 0;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+
+    .volume-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .volume-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .volume-slider {
+      width: 0;
+      height: 5px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      transition: width 0.3s;
+      position: relative;
+    }
+
+    .volume-container:hover .volume-slider {
+      width: 80px;
+    }
+
+    .volume-level {
+      height: 100%;
+      background-color: #ff3333;
+      width: 50%;
+      border-radius: 5px;
+    }
+
+    .terminal-effect {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .terminal-effect::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: repeating-linear-gradient(
+        to right,
+        transparent,
+        transparent 50%,
+        rgba(255, 0, 0, 0.2) 50%,
+        rgba(255, 0, 0, 0.2) 100%
+      );
+      background-size: 10px 2px;
+      animation: scan 8s linear infinite;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    }
+
+    @keyframes scan {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(1000%);
+      }
+    }
+
+    .quote {
+      font-style: italic;
+      text-align: center;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background-color: rgba(255, 0, 0, 0.05);
+      border-left: 3px solid #ff3333;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.2);
+      border-radius: 0 5px 5px 0;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+      font-family: 'Rajdhani', sans-serif;
+      position: relative;
+    }
+
+    .quote::before {
+      content: '\f10d';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 1.5rem;
+      color: rgba(255, 0, 0, 0.2);
+    }
+
+    .quote-author {
+      display: block;
+      text-align: right;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #ff3333;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+
+    @keyframes flicker {
+      0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        opacity: 0.99;
+      }
+      20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.4;
+      }
+    }
+
+    .container {
+      animation: flicker 15s infinite;
+    }
+
+    .cursor-effect {
+      position: relative;
+    }
+
+    .cursor-effect::after {
+      content: '|';
+      position: absolute;
+      right: -15px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 49% {
+        opacity: 1;
+      }
+      50%, 100% {
+        opacity: 0;
+      }
+    }
+
+    .logo {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #ff3333;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    .logo::after {
+      content: '';
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      border: 1px solid rgba(255, 0, 0, 0.5);
+      border-radius: 50%;
+      animation: pulse 2s infinite 0.5s;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 51, 51, 0.7);
+      }
+      
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 51, 51, 0);
+      }
+      
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 51, 51, 0);
+      }
+    }
+
+    .logo-inner {
+      font-size: 2rem;
+      color: #ff3333;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    }
+
+    .freemasonry-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 0, 0, 0.2);
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      color: #ff3333;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    }
+
+    .freemasonry-badge i {
+      margin-right: 5px;
+    }
+
+    .highlight {
+      color: #ff3333;
+      font-weight: bold;
+      text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+    }
+
+    .masonic-symbol {
+      display: inline-block;
+      margin: 0 5px;
+      font-size: 1.2em;
+      color: #ff3333;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    }
+  </style>
 </head>
 <body>
-    <article class="bootscreen">
-        <div class="dos"></div>
-        <div class="splash" style="background-image: url('https://i.ytimg.com/vi/QE18Lr_XVMY/hqdefault.jpg')"></div>
-    </article>
-    <div class="desktop">
-        <div class="icons">
-            <div class="icon" onclick="openWindow('my-computer')">
-                <img src="https://custom-doodle.com/wp-content/uploads/doodle/windows-95-pc-icon/windows-95-pc-icon-doodle.gif" alt="My Computer">
-                <span>My Computer</span>
-            </div>
-            <div class="icon" onclick="openWindow('recycle-bin')">
-                <img src="https://i.ibb.co/0tC48pL/recycle-bin.png" alt="Recycle Bin">
-                <span>Recycle Bin</span>
-            </div>
-            <div class="icon" onclick="showBSOD()">
-                <img src="https://i.ibb.co/71sZrYN/Smail.png" alt="Smail.exe">
-                <span>Virus.exe</span>
-            </div>
-            <div class="icon music-icon" onclick="toggleMusic()">
-                <img id="music-icon" src="https://raw.githubusercontent.com/KBSL/KBSL.github.io/main/cd.png" alt="Music">
-                <span>Music</span>
-            </div>
-            <div class="icon" onclick="openWindow('explorer')">
-                <img src="https://i.ibb.co/gP6K5L5/Folder.png" alt="Explorer">
-                <span>My Tools</span>
-            </div>
-        </div>
-    </div>
-    <div id="my-computer" class="window">
-        <div class="title-bar">
-            <span>My Computer</span>
-            <button class="close-btn" onclick="closeWindow('my-computer')">X</button>
-        </div>
-        <div class="content">
-            <p>My name is abolhb my hobbies include collecting stones, gathering victims, and destroying devices i was born in moscow</p>
-        </div>
-    </div>
-    <div id="recycle-bin" class="window">
-        <div class="title-bar">
-            <span>Recycle Bin</span>
-            <button class="close-btn" onclick="closeWindow('recycle-bin')">X</button>
-        </div>
-        <div class="content">
-            <p>This is the recycle bin in which we place victims</p>
-        </div>
-    </div>
-    <div id="explorer" class="explorer-window">
-        <div class="title-bar">
-            <span>Explorer</span>
-            <button class="close-btn" onclick="closeWindow('explorer')">X</button>
-        </div>
-        <div class="explorer-toolbar">
-            <button>Freemasoney</button>
-            <button>BombTeam</button>
-            <button>WizTeam</button>
-        </div>
-        <div class="explorer-sidebar">
-            <ul>
-                <li onclick="showTools()">Tools</li>
-                <li onclick="showViruses()">Viruses</li>
-                <li onclick="showApplications()">Applications</li>
-            </ul>
-        </div>
-        <div class="explorer-content" id="explorer-content">
-        </div>
-    </div>
-    <div id="BSOD"></div>
-    <audio id="music" src="https://ia800605.us.archive.org/5/items/yal-3-yn-8-same/YAL3YN-8SAME.mp3"></audio>
-    <div class="taskbar">
-        <div class="start-btn" onclick="toggleStartMenu()">
-            <img src="https://i.redd.it/s120xizbj4r81.jpg" alt="Start">
-        </div>
-        <div id="start-menu" class="start-menu">
-            <ul>
-                <li><a href="https://discord.gg/dvXH85CfpN" target="_blank">Discord Server</a></li>
-                <li><a href="https://www.instagram.com/g7m9/" target="_blank">My Instagram</a></li>
-                <li><a href="https://www.youtube.com/@ABOLHB" target="_blank">My YouTube Channel</a></li>
-                <li><a href="https://github.com/MasonGroup" target="_blank">GitHub Repository</a></li>
-            </ul>
-        </div>
-    </div>
-    <script>
-        function openWindow(windowId) {
-            document.getElementById(windowId).style.display = 'block';
-            makeWindowDraggable(windowId);
-            if (windowId === 'explorer') {
-                showTools();
-            }
-        }
-        function closeWindow(windowId) {
-            document.getElementById(windowId).style.display = 'none';
-        }
-        function showBSOD() {
-    const bsod = document.getElementById('BSOD');
-    const music = document.getElementById('music');
-    if (music && !music.paused) {
-        music.pause();
-    }
-    bsod.style.display = 'block';
-    }
-        function toggleMusic() {
-            const music = document.getElementById('music');
-            const musicIcon = document.getElementById('music-icon');
+  <div class="background-container"></div>
 
-            if (music.paused) {
-                music.play(); 
-                musicIcon.src = "https://raw.githubusercontent.com/KBSL/KBSL.github.io/main/windows-95-spin-disc-icon.gif";
-            } else {
-                music.pause(); 
-                musicIcon.src = "https://raw.githubusercontent.com/KBSL/KBSL.github.io/main/cd.png"; 
-            }
-        }
-        function toggleStartMenu() {
-            const startMenu = document.getElementById('start-menu');
-            if (startMenu.style.display === 'block') {
-                startMenu.style.display = 'none';
-            } else {
-                startMenu.style.display = 'block';
-            }
-        }
-        function makeWindowDraggable(windowId) {
-            const windowElement = document.getElementById(windowId);
-            const titleBar = windowElement.querySelector('.title-bar');
-            let isDragging = false;
-            let offsetX, offsetY;
-            titleBar.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                offsetX = e.clientX - windowElement.offsetLeft;
-                offsetY = e.clientY - windowElement.offsetTop;
-            });
-            document.addEventListener('mousemove', (e) => {
-                if (isDragging) {
-                    windowElement.style.left = `${e.clientX - offsetX}px`;
-                    windowElement.style.top = `${e.clientY - offsetY}px`;
-                }
-            });
+  <div class="container terminal-effect">
+    <div class="freemasonry-badge">
+      <i class="fas fa-square-full"></i> FREEMASONRY MEMBER
+    </div>
 
-            document.addEventListener('mouseup', () => {
-                isDragging = false;
-            });
-        }
-        function showTools() {
-            const content = document.getElementById('explorer-content');
-            content.innerHTML = `
-                <div class="file" onclick="showViruses()">
-                    <img src="https://i.ibb.co/TML99dW/Folder.png" alt="Viruses">
-                    <span>Viruses</span>
-                </div>
-                <div class="file" onclick="showApplications()">
-                    <img src="https://i.ibb.co/TML99dW/Folder.png" alt="Applications">
-                    <span>Applications</span>
-                </div>
-            `;
-        }
-        function showViruses() {
-    const content = document.getElementById('explorer-content');
-    const viruses = [
-        { name: "Magellan", link: "https://github.com/MasonGroup/Magellan/archive/refs/heads/main.zip" },
-        { name: "MatrixVirus", link: "https://github.com/MasonGroup/MatrixVirus/archive/refs/heads/main.zip" },
-        { name: "Squidward", link: "https://github.com/MasonGroup/Squidward/archive/refs/heads/main.zip" },
-        { name: "AngryVirus", link: "https://github.com/MasonGroup/AngryVirus/archive/refs/heads/main.zip" },
-        { name: "Stalin", link: "https://github.com/MasonGroup/Stalin/archive/refs/heads/main.zip" },
-        { name: "Knuckles", link: "https://github.com/MasonGroup/Knuckles/archive/refs/heads/main.zip" },
-        { name: "Pendulum", link: "https://github.com/MasonGroup/Pendulum/archive/refs/heads/main.zip" },
-        { name: "Creep", link: "https://github.com/MasonGroup/Creep/archive/refs/heads/main.zip" },
-        { name: "DOMO", link: "https://github.com/MasonGroup/DOMO/archive/refs/heads/main.zip" },
-        { name: "MasonMelting", link: "https://github.com/MasonGroup/MasonMelting/archive/refs/heads/main.zip" },
-        { name: "MasonVirusV2", link: "https://github.com/MasonGroup/MasonVirusV2/archive/refs/heads/main.zip" },
-        { name: "MasonVirusV3", link: "https://github.com/MasonGroup/MasonVirusV3/archive/refs/heads/main.zip" },
-        { name: "MasonVirus", link: "https://github.com/MasonGroup/MasonVirus/archive/refs/heads/main.zip" },
-        { name: "HighHappy", link: "https://github.com/MasonGroup/HighHappy/archive/refs/heads/main.zip" },
-        { name: "MTHR7H", link: "https://github.com/MasonGroup/MTHR7H/archive/refs/heads/main.zip" },
-        { name: "PASCAL", link: "https://github.com/MasonGroup/PASCAL/archive/refs/heads/main.zip" },
-        { name: "MasonMalware", link: "https://github.com/MasonGroup/MasonMalware/archive/refs/heads/main.zip" },
-        { name: "Anti-Format", link: "https://github.com/MasonGroup/Anti-Format/archive/refs/heads/main.zip" },
-        { name: "PEEKABOO", link: "https://github.com/MasonGroup/PEEKABOO/archive/refs/heads/main.zip" },
-        { name: "Blocker-Anti-Virus", link: "https://github.com/MasonGroup/Blocker-Anti-Virus/archive/refs/heads/main.zip" },
-        { name: "Commandos.exe", link: "https://github.com/MasonGroup/Commandos.exe/archive/refs/heads/main.zip" },
-        { name: "Disable-UAC", link: "https://github.com/MasonGroup/Disable-UAC/archive/refs/heads/main.zip" },
-        { name: "MasonMBR", link: "https://github.com/MasonGroup/MasonMBR/archive/refs/heads/main.zip" },
-        { name: "MasonExln9.exe", link: "https://github.com/MasonGroup/MasonExln9.exe/archive/refs/heads/main.zip" },
-        { name: "MasonRansomware", link: "https://github.com/MasonGroup/MasonRansomware/archive/refs/heads/main.zip" },
-        { name: "XLNS", link: "https://github.com/MasonGroup/XLNS/archive/refs/heads/main.zip" },
-        { name: "BOOM", link: "https://github.com/MasonGroup/BOOM/archive/refs/heads/main.zip" },
-        { name: "MasonRoulette", link: "https://github.com/MasonGroup/MasonRoulette/archive/refs/heads/main.zip" },
-        { name: "Neshta.A", link: "https://github.com/MasonGroup/Neshta.A/archive/refs/heads/main.zip" }
-    ];
-    content.innerHTML = viruses.map(virus => `
-        <div class="file" onclick="window.open('${virus.link}')" style="text-align: center;">
-            <img src="https://thenavidex.github.io/browsers/abrowser.png" alt="${virus.name}" style="display: block; margin: 0 auto;">
-            <span style="display: block; margin-top: 5px;">${virus.name}</span>
+    <header>
+      <div class="logo">
+        <div class="logo-inner">
+          <i class="fas fa-bug"></i>
         </div>
-    `).join('');
-}
-function showApplications() {
-    const content = document.getElementById('explorer-content');
-    const applications = [
-        { name: "NeptuneRAT", link: "https://github.com/MasonGroup/NeptuneRAT/archive/refs/heads/main.zip" },
-        { name: "SVCINJ", link: "https://github.com/MasonGroup/SVCINJ/archive/refs/heads/main.zip" },
-        { name: "MasonRootkit", link: "https://github.com/MasonGroup/BuilderMasonRootkit/archive/refs/heads/main.zip" },
-        { name: "MasonGuard", link: "https://github.com/MasonGroup/MasonGuard/archive/refs/heads/main.zip" },
-        { name: "BOMBER", link: "https://github.com/MasonGroup/BOMBER/archive/refs/heads/main.zip" },
-        { name: "Mason-Obfuscator", link: "https://github.com/MasonGroup/MasonObfuscator/archive/refs/heads/main.zip" },
-        { name: "Matrix-Obfuscator", link: "https://github.com/MasonGroup/MatrixObfuscator/archive/refs/heads/main.zip" },
-        { name: "VenomDropper", link: "https://github.com/MasonGroup/VenomDropper/archive/refs/heads/main.zip" },
-        { name: "SuperBooRat", link: "https://github.com/MasonGroup/SuperBooRat/archive/refs/heads/main.zip" },
-        { name: "MasonCrypt", link: "https://github.com/MasonGroup/MasonCrypt/archive/refs/heads/main.zip" },
-        { name: "MasonGrabber", link: "https://github.com/MasonGroup/MasonGrabber/archive/refs/heads/main.zip" },
-        { name: "VenomPacker", link: "https://github.com/MasonGroup/VenomPacker/archive/refs/heads/main.zip" },
-        { name: "Discord-Control-Box", link: "https://github.com/MasonGroup/Discord-Control-Box/archive/refs/heads/main.zip" },
-        { name: "MasonNuker", link: "https://github.com/MasonGroup/MasonNuker/archive/refs/heads/main.zip" },
-        { name: "Troll-Crypter", link: "https://github.com/MasonGroup/Troll-Crypter/archive/refs/heads/main.zip" }
-    ];
-    content.innerHTML = applications.map(app => `
-        <div class="file" onclick="window.open('${app.link}')" style="text-align: center;">
-            <img src="https://thenavidex.github.io/browsers/abrowser.png" alt="${app.name}" style="display: block; margin: 0 auto;">
-            <span style="display: block; margin-top: 5px;">${app.name}</span>
+      </div>
+      <h1 class="main-title">ABOLHB</h1>
+      <p class="subtitle">Malware Developer & Security Researcher</p>
+    </header>
+
+    <div class="quote">
+      "Programming is like dark poetry written for machines."
+      <span class="quote-author">- ABOLHB</span>
+    </div>
+
+    <div class="content">
+      <div class="section">
+        <h2><i class="fas fa-user-secret"></i> About Me</h2>
+        <p>Born in Moscow and living in Al-Kharj, I am a passionate malware developer and security researcher specializing in Rootkit vulnerabilities. My inspiration comes from Saddam Hussein, who has been my role model throughout my life.</p>
+        <p>With extensive experience in various programming languages, I've contributed to several notable projects in the cybersecurity field, including NeptuneRAT and MasonRootkit.</p>
+        <p>I am a proud member of the <span class="highlight">FREEMASONRY</span> group <span class="masonic-symbol">⛤</span> which has guided my path in the digital underworld and shaped my approach to security research.</p>
+      </div>
+
+      <div class="section">
+        <h2><i class="fas fa-code"></i> Technical Skills</h2>
+        <div class="skills">
+          <div class="skill">
+            <span class="skill-name"><i class="fab fa-microsoft"></i> C#</span>
+            <div class="skill-level"></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name"><i class="fab fa-python"></i> Python</span>
+            <div class="skill-level"></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name"><i class="fas fa-cogs"></i> C++</span>
+            <div class="skill-level"></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name"><i class="fab fa-html5"></i> HTML</span>
+            <div class="skill-level"></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name"><i class="fab fa-js"></i> JavaScript</span>
+            <div class="skill-level"></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name"><i class="fab fa-css3-alt"></i> CSS</span>
+            <div class="skill-level"></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name"><i class="fas fa-microchip"></i> C</span>
+            <div class="skill-level"></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name"><i class="fas fa-memory"></i> Assembly</span>
+            <div class="skill-level"></div>
+          </div>
         </div>
-    `).join('');
-}
-    </script>
+      </div>
+
+      <div class="section">
+        <h2><i class="fas fa-project-diagram"></i> Notable Projects</h2>
+        <ul class="projects">
+          <li>NeptuneRAT - Advanced Remote Access Tool</li>
+          <li>MasonRootkit - Kernel-level rootkit for system infiltration</li>
+          <li>FreemasonsVault - Secure communication channel for members</li>
+          <li>Various security tools and exploits</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2><i class="fas fa-network-wired"></i> Connect With Me</h2>
+        <div class="social-links">
+          <a href="https://github.com/MasonGroup" class="social-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://www.instagram.com/g7m9" class="social-link" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="https://www.youtube.com/@ABOLHB" class="social-link" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="https://discord.com/invite/dvXH85CfpN" class="social-link" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-music"></i> Favorite Music</h2>
+      <div class="audio-player">
+        <p><i class="fas fa-headphones"></i> Listen to my favorite track:</p>
+        <div class="custom-audio-player">
+          <button class="play-pause-btn" id="playPauseBtn">
+            <i class="fas fa-play" id="playPauseIcon"></i>
+          </button>
+          <div class="audio-info">
+            <div class="audio-title">YAL3YN-8SAME</div>
+            <div class="progress-container" id="progressContainer">
+              <div class="progress-bar" id="progressBar"></div>
+            </div>
+          </div>
+          <div class="volume-container">
+            <button class="volume-btn" id="volumeBtn">
+              <i class="fas fa-volume-up" id="volumeIcon"></i>
+            </button>
+            <div class="volume-slider" id="volumeSlider">
+              <div class="volume-level" id="volumeLevel"></div>
+            </div>
+          </div>
+        </div>
+        <audio id="audioElement" src="https://ia800605.us.archive.org/5/items/yal-3-yn-8-same/YAL3YN-8SAME.mp3" preload="metadata" style="display: none;"></audio>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 ABOLHB | <i class="fas fa-skull"></i> Malware Developer & Security Researcher | <span class="masonic-symbol">⛤</span> FREEMASONRY</p>
+    </footer>
+  </div>
+
+  <script>
+    (function() {
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+      });
+      
+      document.addEventListener('keydown', function(e) {
+        if (
+          e.keyCode === 123 || 
+          (e.ctrlKey && e.shiftKey && e.keyCode === 73) ||
+          (e.ctrlKey && e.shiftKey && e.keyCode === 74) || 
+          (e.ctrlKey && e.keyCode === 85) 
+        ) {
+          e.preventDefault();
+          return false;
+        }
+      });
+      
+      const devtools = {
+        isOpen: false,
+        orientation: undefined
+      };
+      
+      const threshold = 160;
+      
+      const checkDevTools = () => {
+        const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+        const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+        
+        if (
+          !(heightThreshold && widthThreshold) &&
+          ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)
+        ) {
+          if (!devtools.isOpen) {
+            devtools.isOpen = true;
+            document.body.innerHTML = '<h1 style="color: red; text-align: center; margin-top: 50px;">Inspection is not allowed!</h1>';
+          }
+        } else {
+          devtools.isOpen = false;
+        }
+      };
+      
+      checkDevTools();
+      
+      window.addEventListener('resize', checkDevTools);
+      
+      setInterval(checkDevTools, 1000);
+      
+      document.onkeydown = function(e) {
+        if (e.ctrlKey && 
+            (e.keyCode === 85 || 
+             e.keyCode === 83 || 
+             e.keyCode === 73)) { 
+          return false;
+        }
+      };
+    })();
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const audioElement = document.getElementById('audioElement');
+      const playPauseBtn = document.getElementById('playPauseBtn');
+      const playPauseIcon = document.getElementById('playPauseIcon');
+      const progressContainer = document.getElementById('progressContainer');
+      const progressBar = document.getElementById('progressBar');
+      const volumeBtn = document.getElementById('volumeBtn');
+      const volumeIcon = document.getElementById('volumeIcon');
+      const volumeSlider = document.getElementById('volumeSlider');
+      const volumeLevel = document.getElementById('volumeLevel');
+      
+      audioElement.volume = 0.5;
+      
+      playPauseBtn.addEventListener('click', function() {
+        if (audioElement.paused) {
+          audioElement.play();
+          playPauseIcon.classList.remove('fa-play');
+          playPauseIcon.classList.add('fa-pause');
+        } else {
+          audioElement.pause();
+          playPauseIcon.classList.remove('fa-pause');
+          playPauseIcon.classList.add('fa-play');
+        }
+      });
+      
+      audioElement.addEventListener('timeupdate', function() {
+        const progress = (audioElement.currentTime / audioElement.duration) * 100;
+        progressBar.style.width = progress + '%';
+      });
+      
+      progressContainer.addEventListener('click', function(e) {
+        const clickPosition = (e.offsetX / this.offsetWidth);
+        const seekTime = clickPosition * audioElement.duration;
+        audioElement.currentTime = seekTime;
+      });
+      
+      volumeBtn.addEventListener('click', function() {
+        if (audioElement.volume > 0) {
+          audioElement.volume = 0;
+          volumeIcon.classList.remove('fa-volume-up');
+          volumeIcon.classList.add('fa-volume-mute');
+          volumeLevel.style.width = '0%';
+        } else {
+          audioElement.volume = 0.5;
+          volumeIcon.classList.remove('fa-volume-mute');
+          volumeIcon.classList.add('fa-volume-up');
+          volumeLevel.style.width = '50%';
+        }
+      });
+      
+      volumeSlider.addEventListener('click', function(e) {
+        const newVolume = e.offsetX / this.offsetWidth;
+        audioElement.volume = newVolume;
+        volumeLevel.style.width = (newVolume * 100) + '%';
+        
+        if (newVolume === 0) {
+          volumeIcon.className = 'fas fa-volume-mute';
+        } else if (newVolume < 0.5) {
+          volumeIcon.className = 'fas fa-volume-down';
+        } else {
+          volumeIcon.className = 'fas fa-volume-up';
+        }
+      });
+      
+      audioElement.addEventListener('ended', function() {
+        audioElement.currentTime = 0;
+        audioElement.play();
+      });
+      
+      audioElement.addEventListener('error', function() {
+        console.error('Error loading audio file');
+        const audioPlayer = document.querySelector('.audio-player');
+        audioPlayer.innerHTML = '<p><i class="fas fa-exclamation-triangle"></i> Error loading audio. Please try again later.</p>';
+      });
+    });
+  </script>
 </body>
 </html>
